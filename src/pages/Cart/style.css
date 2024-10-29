@@ -57,3 +57,10 @@
 .carrinho p{
     padding: 1rem;
 }
+
+#teste .teste_payment{
+    border-width: 1px;
+    border-color: aliceblue;
+    border-radius: 5px;
+    border-style: solid;
+}

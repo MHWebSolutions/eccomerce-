@@ -11,12 +11,20 @@ export const Cart = () => {
     const navigate = useNavigate()
     const {state,dispatch} = useContext(GlobalContext)
     const {cart} = state
+    const [payment,setPayment] = useState('')
     const handleClick = (obj, index) => {
         dispatch({type: types.CART_REMOVE, payload : {obj,index}})
     }
 
     const handleNavigate = (id) => {
         navigate(`/about/${id}`)
+    }
+
+    const handleChange =  (e) => {
+
+        setPayment(e)
+        if(payment == "credit") alert("deu boa")
+        alert(payment)
     }
 
     useEffect(()=>{
@@ -45,7 +53,15 @@ export const Cart = () => {
                 </>
                     
                     ))}</div>) : (<p>lista vazia</p>)}
-                    <div className="carrinho"><p>valor</p> <p>R${total}</p></div>
+                    <div className="carrinho">
+                        {!payment == "credit" ? (<p>credito selecionado</p>) : ("")}
+                        <select name="teste" id="teste" className="teste_payment" onChange={e => handleChange(e.target.value)}>
+                            <option value="disabled" disabled>pagamento</option>
+                            <option value="debit">débito</option>
+                            <option value="credit">crédito</option>
+                        </select>
+                        <p>valor</p> <p>R${total}</p>
+                    </div>
             </div>
         </>
     )
