@@ -1,0 +1,21 @@
+@import "../../colors.css";
+
+.main-button{
+    background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: var(--font-color);
+    border: none;
+    font-family: "Khand", sans-serif;
+    border-radius: 5px;
+    height: 5%;
+    cursor: pointer;
+}
+
+.small{
+    width: 50%;
+}
+
+.large{
+    width: 70%;
+    height: 7vh;
+    font-size: 1.3rem;
+}

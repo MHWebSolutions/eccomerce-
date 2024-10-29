@@ -1,0 +1,60 @@
+@import '../../colors.css';
+
+#prod{
+    width: 70vw;
+    margin: auto;
+    color: aliceblue;
+    margin-top: 15vh;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+}
+
+.img , .prod_data{
+    width: 50%;
+    height: 100%;
+}
+
+.prod_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.img img{
+    width: 80%;
+    height: 100%;
+}
+
+.prod_content{
+    width: 80%;
+    height: 80%;
+    margin: 7% ;
+}
+
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Cart{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.data:nth-child(1){
+    font-size: 3rem;
+}
+
+.data:nth-child(2){
+    font-size: 1.2rem;
+}
+
+.data:nth-child(3){
+    font-size: 1.7rem;
+}
