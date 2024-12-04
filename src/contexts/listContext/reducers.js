@@ -24,7 +24,6 @@ export const reducer = (state,action) => {
                     qtnd -= 1
                 }
                 const newCart = [...cart, ...array]
-                console.log(newCart)
                 return{...state, cart: newCart}
             }
             else{

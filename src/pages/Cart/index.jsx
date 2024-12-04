@@ -23,8 +23,6 @@ export const Cart = () => {
     const handleChange =  (e) => {
 
         setPayment(e)
-        if(payment == "credit") alert("deu boa")
-        alert(payment)
     }
 
     useEffect(()=>{
@@ -54,11 +52,14 @@ export const Cart = () => {
                     
                     ))}</div>) : (<p>lista vazia</p>)}
                     <div className="carrinho">
-                        {!payment == "credit" ? (<p>credito selecionado</p>) : ("")}
-                        <select name="teste" id="teste" className="teste_payment" onChange={e => handleChange(e.target.value)}>
+                        {!!payment != "" ? (
+                            <p><select name="parcelas" id="teste" className="teste_payment">
+                                    <option value="1x">1 vez</option>
+                                </select></p>) : (<p>nada aqui</p>)}
+                        <select name="teste" id="teste" className="teste_payment" onChange={e => setPayment(e.target.value)}>
                             <option value="disabled" disabled>pagamento</option>
-                            <option value="debit">débito</option>
-                            <option value="credit">crédito</option>
+                            <option value="">débito</option>
+                            <option value="2">crédito</option>
                         </select>
                         <p>valor</p> <p>R${total}</p>
                     </div>
