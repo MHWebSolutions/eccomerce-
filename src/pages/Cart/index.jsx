@@ -20,11 +20,6 @@ export const Cart = () => {
         navigate(`/about/${id}`)
     }
 
-    const handleChange =  (e) => {
-
-        setPayment(e)
-    }
-
     useEffect(()=>{
         let soma = 0
         if(cart.length == 0) setTotal(0)
@@ -41,7 +36,7 @@ export const Cart = () => {
                 <h1>Carrinho</h1>
                {cart.length > 0 ? ( <div className="items">{cart.map((prod,index) => (
                     
-                    <>
+                <>
                     <div className="item" key={prod.id}>
                         <img src={prod.image} alt="" className="image" onClick={() => handleNavigate(prod.id)}/>
                         <div className="title">{prod.title}</div>
@@ -51,7 +46,7 @@ export const Cart = () => {
                 </>
                     
                     ))}</div>) : (<p>lista vazia</p>)}
-                    <div className="carrinho">
+                    {cart.length > 0 ? (<div className="carrinho">
                         {!!payment != "" ? (
                             <p><select name="parcelas" id="teste" className="teste_payment">
                                     <option value="1x">1 vez</option>
@@ -62,7 +57,7 @@ export const Cart = () => {
                             <option value="2">crédito</option>
                         </select>
                         <p>valor</p> <p>R${total}</p>
-                    </div>
+                    </div>) : (<div>carrinho vazio</div>)}
             </div>
         </>
     )
